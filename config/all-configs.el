@@ -24,6 +24,7 @@
 (require 'my-themes)
 (require 'my-web)
 (require 'my-window-numbering)
+(require 'my-yas)
 (require 'all-keybindings)
 
 ;; required packages without individual configuration
