@@ -1,5 +1,6 @@
 (require 'package)
 
+(setq-default indent-tabs-mode nil)
 
 (defun require-package (pkg)
   "Installs package if it is not already installed"

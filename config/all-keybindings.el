@@ -1,6 +1,12 @@
 (provide 'all-keybindings)
 
 ;; global keybindings
+(global-set-key (kbd "C-c C-l") 'my-clojure-eval-saved-form)
+
+(global-unset-key (kbd "S-<down-mouse-1>"))
+(global-set-key (kbd "S-<mouse-1>") 'mouse-save-then-kill)
+
+(global-set-key (kbd "C-x w") 'switch-window-then-swap-buffer)
 
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
 (global-set-key (kbd "C-<next>") 'next-buffer)
@@ -9,13 +15,14 @@
 (global-set-key (kbd "M-n") 'scroll-down-line)
 
 (global-set-key (kbd "C-x o") 'switch-window)
-(global-set-key (kbd "C-<tab>") 'switch-window)
+(global-set-key (kbd "C-<tab>") 'other-window)
+(global-set-key (kbd "<backtab>") (lambda () (interactive) (other-window -1)))
 
 (global-set-key (kbd "C-x f") 'my-ido-recentf-open)
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
-(global-set-key (kbd "C-q") 'my-neotree-show)
+(global-set-key (kbd "M-Q") 'my-neotree-show)
 
 (global-set-key (kbd "C-<") 'mc/mark-next-like-this)
 (global-set-key (kbd "C->") 'mc/mark-previous-like-this)
@@ -66,13 +73,12 @@
   (define-key cider-mode-map (kbd "C-M-<") 'mc/mark-all-symbols-like-this)
   (define-key cider-mode-map (kbd "C-<") 'mc/mark-all-symbols-like-this-in-defun)
   (define-key cider-mode-map (kbd "C-c <C-return>") 'my-clojure-restart-system)
-  (define-key cider-mode-map (kbd "C-c RET") 'my-clojure-start-figwheel)
+  (define-key cider-mode-map (kbd "C-c M-RET") 'my-clojure-start-figwheel)
   (define-key cider-mode-map (kbd "C-c C-d") 'my-clojure-cider-popup-doc)
   (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
   (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-connection-default)
   (define-key cider-mode-map (kbd "<tab>") 'my-indent-and-complete-symbol)
   (define-key cider-mode-map (kbd "C-c C-p") 'my-clojure-refresh-namespaces)
-  (define-key cider-mode-map (kbd "C-c <C-return>") 'my-clojure-restart-system)
   (define-key cider-mode-map (kbd "C-c C-c") 'my-clojure-eval-form)
   (define-key cider-mode-map (kbd "C-c l") 'my-clojure-save-form)
   (define-key cider-mode-map (kbd "C-c M-p") 'my-clojure-insert-defun-in-repl)
@@ -90,6 +96,7 @@
   (define-key cider-repl-mode-map (kbd "<tab>") 'my-indent-and-complete-symbol)
   (define-key cider-repl-mode-map (kbd "C-c C-p") 'my-clojure-refresh-namespaces)
   (define-key cider-repl-mode-map (kbd "C-c <C-return>") 'my-clojure-restart-system)
+  (define-key cider-repl-mode-map (kbd "C-c M-RET") 'my-clojure-start-figwheel)
   (define-key cider-repl-mode-map (kbd "C-c l") 'my-clojure-save-form)
   (define-key cider-repl-mode-map (kbd "C-c C-l") 'my-clojure-eval-saved-form)
   (define-key cider-repl-mode-map (kbd "C-c C-i") 'my-clojure-indent-defn)
