@@ -46,6 +46,7 @@
 
 (add-hook 'neotree-mode-hook
 	  (lambda ()
+            (define-key neotree-mode-map (kbd "RET") 'my-neotree-peek)
 	    (hl-line-mode)
 	    (visual-line-mode 0)))
 
