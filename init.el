@@ -14,13 +14,13 @@
 ;; (setq url-proxy-services '(("http" . "YOUR-HOST:8080")))
 
 (setq package-archives
-      '(("MELPA"        . "https://melpa.org/packages/")
+      '(("GNU ELPA"     . "http://elpa.gnu.org/packages/")
         ("MELPA Stable" . "https://stable.melpa.org/packages/")
-        ("GNU ELPA"     . "http://elpa.gnu.org/packages/"))
+        ("MELPA"        . "https://melpa.org/packages/"))
       package-archive-priorities
-      '(("MELPA"        . 10)
-        ("MELPA Stable" . 5)
-        ("GNU ELPA"     . 1)))
+      '(("MELPA Stable" . 10)
+        ("GNU ELPA"     . 5)
+        ("MELPA"        . 0)))
 
 
 (package-initialize)
