@@ -75,3 +75,5 @@
 
 ;; make C-i independent from TAB
 ;(define-key local-function-key-map [tab] nil)
+
+(setq ring-bell-function 'ignore)
