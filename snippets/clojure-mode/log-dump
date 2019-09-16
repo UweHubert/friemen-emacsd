@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: log-dump
+# key: log-dump
+# --
+(taoensso.timbre/report (with-out-str (clojure.pprint/pprint $1)))
