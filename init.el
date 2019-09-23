@@ -22,6 +22,7 @@
         ("GNU ELPA"     . 5)
         ("MELPA"        . 0)))
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (package-initialize)
 
