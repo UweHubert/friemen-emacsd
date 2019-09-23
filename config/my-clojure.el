@@ -21,6 +21,11 @@
 
 (defun my-clojure-restart-system ()
   (interactive)
+  (cider-interactive-eval "(user/system-stop!)")
+  (cider-interactive-eval "(user/system-go!)"))
+
+(defun my-clojure-reload-restart-system ()
+  (interactive)
   (cider-interactive-eval "(user/system-restart!)"))
 
 
