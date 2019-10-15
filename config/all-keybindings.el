@@ -1,6 +1,16 @@
 (provide 'all-keybindings)
 
 ;; global keybindings
+
+;; (global-set-key (kbd "H-w") 'previous-line)
+;; (global-set-key (kbd "H-s") 'next-line)
+;; (global-set-key (kbd "H-a") 'backward-char)
+;; (global-set-key (kbd "H-d") 'forward-char)
+;; (global-set-key (kbd "H-q") 'move-beginning-of-line)
+;; (global-set-key (kbd "H-e") 'move-end-of-line)
+;; (global-set-key (kbd "H-W") 'cua-scroll-up)
+;; (global-set-key (kbd "H-S") 'cua-scroll-down)
+
 (global-set-key (kbd "C-c C-l") 'my-clojure-eval-saved-form)
 (global-set-key (kbd "C-c C") 'cider-connect-sibling-clojure)
 
@@ -181,18 +191,22 @@
   (define-key paredit-mode-map (kbd "C-1") 'paredit-open-round)
   (define-key paredit-mode-map (kbd "C-2") 'paredit-open-bracket)
   (define-key paredit-mode-map (kbd "C-3") 'paredit-open-curly)
-  (define-key paredit-mode-map (kbd "C-f") 'paredit-forward)
-  (define-key paredit-mode-map (kbd "C-b") 'paredit-backward)
+  (define-key paredit-mode-map (kbd "H-f") 'paredit-forward)
+  (define-key paredit-mode-map (kbd "H-b") 'paredit-backward)
   (define-key paredit-mode-map (kbd "<tab>") 'my-indent-and-complete-symbol)
   (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
-  (define-key paredit-mode-map (kbd "C-d") 'my-delete-whitespace-except-one)
-  (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)
-  (define-key paredit-mode-map (kbd "C-M-b") 'paredit-backward-up)
+  (define-key paredit-mode-map (kbd "H-d") 'my-delete-whitespace-except-one)
+  (define-key paredit-mode-map (kbd "H-F") 'paredit-forward-down)
+  (define-key paredit-mode-map (kbd "H-B") 'paredit-backward-up)
+  (define-key paredit-mode-map (kbd "C-d") 'my-delete-region-or-char)
   (define-key paredit-mode-map (kbd "<delete>") 'my-delete-region-or-char))
 
 (add-hook 'paredit-mode-hook #'my-paredit-keybindings)
 
-
+(eval-after-load "paredit"
+  '(progn
+     (define-key paredit-mode-map (kbd "C-b") nil)
+     (define-key paredit-mode-map (kbd "C-f") nil)))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org
