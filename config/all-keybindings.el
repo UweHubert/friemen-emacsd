@@ -6,8 +6,8 @@
 ;; (global-set-key (kbd "H-s") 'next-line)
 ;; (global-set-key (kbd "H-a") 'backward-char)
 ;; (global-set-key (kbd "H-d") 'forward-char)
-;; (global-set-key (kbd "H-q") 'move-beginning-of-line)
-;; (global-set-key (kbd "H-e") 'move-end-of-line)
+(global-set-key (kbd "H-<prior>") 'move-beginning-of-line)
+(global-set-key (kbd "H-<next>") 'move-end-of-line)
 ;; (global-set-key (kbd "H-W") 'cua-scroll-up)
 ;; (global-set-key (kbd "H-S") 'cua-scroll-down)
 
