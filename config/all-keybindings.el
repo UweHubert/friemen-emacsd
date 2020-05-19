@@ -107,8 +107,8 @@
   (define-key cider-repl-mode-map (kbd "C-c M-z") 'nrepl-make-connection-default)
   (define-key cider-repl-mode-map (kbd "<tab>") 'my-indent-and-complete-symbol)
   (define-key cider-repl-mode-map (kbd "C-c C-p") 'my-clojure-refresh-namespaces)
-  (define-key cider-mode-map (kbd "C-c C-<return>") 'my-clojure-reload-restart-system)
-  (define-key cider-mode-map (kbd "C-c S-<return>") 'my-clojure-restart-system)
+  (define-key cider-repl-mode-map (kbd "C-c C-<return>") 'my-clojure-reload-restart-system)
+  (define-key cider-repl-mode-map (kbd "C-c S-<return>") 'my-clojure-restart-system)
   (define-key cider-repl-mode-map (kbd "C-c M-<return>") 'my-clojure-start-figwheel)
   (define-key cider-repl-mode-map (kbd "C-c l") 'my-clojure-save-form)
   (define-key cider-repl-mode-map (kbd "C-c C-l") 'my-clojure-eval-saved-form)
@@ -116,8 +116,6 @@
   (define-key cider-repl-mode-map (kbd "<return>") 'cider-repl-return))
 
 (add-hook 'cider-repl-mode-hook #'my-cider-repl-keybindings)
-
-
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; elisp
