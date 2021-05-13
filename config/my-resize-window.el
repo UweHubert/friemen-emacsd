@@ -10,7 +10,7 @@
     m))
 
 (define-minor-mode my-resize-window-mode
-  :initial-value nil
-  :lighter " my-resize-window"
-  :keymap my-resize-window-mode-map
-  :group 'my-resize-window)
+  "initial-value" nil
+  "lighter" " my-resize-window"
+  "keymap" my-resize-window-mode-map
+  "group" 'my-resize-window)
