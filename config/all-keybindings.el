@@ -12,7 +12,7 @@
 ;; (global-set-key (kbd "H-S") 'cua-scroll-down)
 
 (global-set-key (kbd "C-c C-l") 'my-clojure-eval-saved-form)
-(global-set-key (kbd "C-c C") 'cider-connect-sibling-clojure)
+(global-set-key (kbd "C-c C") 'cider-connect-sibling-clj)
 
 (global-unset-key (kbd "S-<down-mouse-1>"))
 (global-set-key (kbd "S-<mouse-1>") 'mouse-save-then-kill)
